@@ -1,5 +1,8 @@
 package com.kle.configclient.controller;
 
+import com.kle.configclient.config.GitConfig;
+import org.aspectj.lang.annotation.Around;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,32 +13,28 @@ import org.springframework.web.bind.annotation.RestController;
  * @author ypb
  */
 @RestController
-@RefreshScope
 public class ConfigController {
 
-    @Value("${author}")
-    private String author;
+    private final GitConfig gitConfig;
 
-    @Value("${projectName}")
-    private String projectName;
-
-    @Value("${version}")
-    private String version;
+    public ConfigController(GitConfig gitConfig) {
+        this.gitConfig = gitConfig;
+    }
 
     @RequestMapping(value = "/getProjectName")
     private String getProjectName(){
-        System.out.println("aa: " + projectName);
-        return projectName;
+        System.out.println("aa: " + gitConfig.getProjectName());
+        return gitConfig.getProjectName();
     }
 
     @RequestMapping(value = "/getAuthor")
     public String getAuthor() {
-        return author;
+        return gitConfig.getAuthor();
     }
 
     @RequestMapping(value = "/getVersion")
     public String getVersion(){
-        return version;
+        return gitConfig.getVersion();
     }
 
 }
