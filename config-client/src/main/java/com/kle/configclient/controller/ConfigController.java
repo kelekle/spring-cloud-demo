@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author ypb
  */
 @RestController
+@RefreshScope
 public class ConfigController {
 
     @Value("${author}")
