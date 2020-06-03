@@ -1,6 +1,6 @@
 package com.kle.consumer.service;
 
-import com.kle.consumer.service.fallback.MyServiceFallback;
+import com.kle.consumer.service.fallback.MyServiceFallbackImpl;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * openfegin服务接口，调用producer-service服务
  * @author ypb
  */
-@FeignClient(value = "producer-service", fallback = MyServiceFallback.class)
+@FeignClient(value = "producer-service", fallback = MyServiceFallbackImpl.class)
 public interface MyService {
 
     /**
@@ -18,7 +18,7 @@ public interface MyService {
     Object get();
 
     /**
-     * @return
+     * @return something with port
      */
     @RequestMapping(value = "/test")
     String testLoadBalance();

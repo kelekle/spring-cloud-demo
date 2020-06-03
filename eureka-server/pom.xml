@@ -7,9 +7,9 @@
         <artifactId>Spring-Cloud-Demo</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-    <artifactId>euraka-server</artifactId>
+    <artifactId>eureka-server</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>euraka-server</name>
+    <name>eureka-server</name>
     <description>Demo project for Spring Boot</description>
 
     <dependencies>

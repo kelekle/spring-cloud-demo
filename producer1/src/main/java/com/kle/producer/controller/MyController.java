@@ -30,7 +30,7 @@ public class MyController {
 
     @RequestMapping(value = "/test")
     public String testLoadBalance(){
-        return port;
+        return "I'm port:" + port;
     }
 
 }

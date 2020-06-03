@@ -16,8 +16,8 @@ import org.springframework.context.annotation.Bean;
  * @author ypb
  */
 @EnableHystrixDashboard
-@EnableHystrix
-@EnableCircuitBreaker
+//@EnableHystrix
+//@EnableCircuitBreaker
 @EnableEurekaClient
 @EnableDiscoveryClient
 @EnableFeignClients

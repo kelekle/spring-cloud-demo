@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
  * @author ypb
  */
 @Component
-public class MyServiceFallback implements MyService {
+public class MyServiceFallbackImpl implements MyService {
 
     @Override
     public Object get() {
